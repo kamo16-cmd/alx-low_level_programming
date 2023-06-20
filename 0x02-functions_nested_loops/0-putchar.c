@@ -1,15 +1,33 @@
 #include <stdio.h>
 
-
 /**
- * _putchar - writes the character c to stdout
- * @c: the character to print
- * Return: on success 1.
- * On error, -1 is returned, an erron is set appropriately
+ * main - prints all possible combinations of two two-digit numbers
+ * Return: Always 0 (Success)
  */
-
-int _putchar(char c)
-
+int main(void)
 {
-	return (write(1, &c, 1));
+	int i, j;
+
+	for (i = 0; i < 100; i++)
+	{
+		for (j = 0; j < 100; j++)
+		{
+			if (i < j)
+			{
+				putchar((i / 10) + 48);
+				putchar((i % 10) + 48);
+				putchar(' ');
+				putchar((j / 10) + 48);
+				putchar((j % 10) + 48);
+				if (i != 98 || j != 99)
+				{
+					putchar(',');
+					putchar(' ');
+				}
+			}
+
+		}
+	}
+	putchar('\n');
+	return (0);
 }
