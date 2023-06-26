@@ -1,18 +1,21 @@
-#include "holberton.h"
+#include "main.h"
 
 /**
- * puts2 - prints every other character starting with the first
- * character, followed by a new line.
- * @str: the string to manipulate.
+ * puts2 - prints part of a string
+ * @str: string to be printed
  *
- * Return: nothing.
- */
+ * Return: void
+ **/
 void puts2(char *str)
 {
-	int i;
-
-	for (i = 0; str[i] != '\0'; i++)
-		if (!(i % 2))
-			_putchar(str[i]);
-	_putchar(10);
+int i = 0;
+while (str[i] != '\0')
+{
+if (i % 2 == 0)
+_putchar(str[i]);
+i++;
 }
+
+_putchar('\n');
+}
+
