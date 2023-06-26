@@ -1,21 +1,20 @@
-#include "main.h"
+#include <stdio.h>
 
-/**
- * puts2 - print one char out of 2 of a string
- * @str: string to print
-**/
+void puts2(char *str) {
+    int i = 0;
 
-void puts2(char *str)
-{
-	int i;
+    while (str[i] != '\0') {
+        printf("%c", str[i]);
+        i += 2;
+    }
 
-	for (i = 0; str[i] != '\0'; i++)
-	{
-		if (i % 2 == 0)
-		{
-			_putchar(str[i]);
-		}
-	}
-
-	_putchar('\n');
+    printf("\n");
 }
+
+int main() {
+    char *str = "Hello, World!";
+    puts2(str);
+
+    return 0;
+}
+
