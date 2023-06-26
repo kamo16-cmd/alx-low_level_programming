@@ -4,36 +4,27 @@
 *@str: string
 *Return:void
 */
-void puts_half(char *str)
-{
-int len = _strlen(str);
+void _putchar(char c);
 
-if (len % 2 == 0)
-len = len / 2;
+void puts_half(char *str) {
+    int length = 0;
+    int i;
 
-else
-len = (len + 1) / 2;
+    while (str[length] != '\0') {
+        length++;
+    }
 
-while (str[len] != '\0')
-{
-_putchar(str[len]);
-len++;
+    int start_index;
+    if (length % 2 == 0) {
+        start_index = length / 2;
+    } else {
+        start_index = (length - 1) / 2;
+    }
+
+    for (i = start_index; i < length; i++) {
+        _putchar(str[i]);
+    }
+
+    _putchar('\n');
 }
-_putchar('\n');
-}
 
-
-/**
- *_strlen - returns the length of a string
- * @s: string
- *Return: returns lenght;
- */
-int _strlen(char *s)
-{
-int count, inc;
-inc = 0;
-for (count = 0; s[count] != '\0'; count++)
-inc++;
-
-return (inc);
-}
