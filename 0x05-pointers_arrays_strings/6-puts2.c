@@ -1,18 +1,17 @@
 #include <stdio.h>
 
-void puts2(char *str) {
-    int i = 0;
+void puts2(const char *str) {
+    int i;
 
-    while (str[i] != '\0') {
+    for (i = 0; str[i] != '\0'; i += 2) {
         printf("%c", str[i]);
-        i += 2;
     }
 
     printf("\n");
 }
 
 int main() {
-    char *str = "Hello, World!";
+    const char *str = "Hello, World!";
     puts2(str);
 
     return 0;
